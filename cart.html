@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Punyela Solutions, empowered by Enhlosweni - Cart</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <i class="fas fa-leaf"></i>
+            <h1>Punyela Solutions</h1>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="about.html">About</a></li>
+
+              <li><a href="contact.html">Contact</a></li>
+              <li class="cart-icon">
+                <a href="cart.html" class="cart-link">
+                  <i class="fas fa-shopping-cart"></i>
+                  <span class="cart-count">0</span></a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Cart -->
+    <main class="container page-content">
+      <h2 class="section-title">Your Cart</h2>
+      <div id="cart-items"></div>
+      <div id="cart-total">
+        <h3>Total: R<span id="total-price">0.00</span></h3>
+
+        <!-- PayFast Checkout Form -->
+        <form
+          id="payfast-form"
+          action="https://sandbox.payfast.co.za/eng/process"
+          method="post"
+        >
+          <!-- Merchant Details -->
+          <input type="hidden" name="merchant_id" value="10000100" />
+          <!-- Replace with your PayFast Merchant ID -->
+          <input type="hidden" name="merchant_key" value="46f0cd694581a" />
+          <!-- Replace with your Merchant Key -->
+
+          <!-- Redirect URLs -->
+          <input
+            type="hidden"
+            name="return_url"
+            value="https://yoursite.com/success"
+          />
+          <input
+            type="hidden"
+            name="cancel_url"
+            value="https://yoursite.com/cancel"
+          />
+          <input
+            type="hidden"
+            name="notify_url"
+            value="https://yoursite.com/notify"
+          />
+
+          <!-- Payment Info -->
+          <input type="hidden" name="amount" id="payfast-amount" value="0.00" />
+          <input
+            type="hidden"
+            name="item_name"
+            value="FreshStudentProduce Order"
+          />
+
+          <!-- Checkout Button -->
+          <button type="submit" class="btn">Pay with PayFast</button>
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-content">
+        <p>&copy; 2025 Punyela Solutions, empowered by Enhlosweni</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
